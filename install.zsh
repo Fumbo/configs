@@ -1,4 +1,4 @@
-#! /bin/zsh
+#! /usr/local/bin/zsh
 
 ## Warning: this script assumes that you are using zsh and running it from
 ## its directory (ie : ./install.zsh)

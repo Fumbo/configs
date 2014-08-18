@@ -3,16 +3,13 @@
 "   This is the .vimrc file
 "
 " Maintainer:
-"   Kévin "Chewie" Sztern
-"   <chewie@deliciousmuffins.net>
-"
-" Complete_version:
-"   You can find the complete configuration,
-"   including all the plugins used, here:
-"   https://github.com/Chewie/configs
+"   Louis "Fumbo" Cadet
+"   <cadet.louis@gmail.com>
 "
 " Acknowledgements:
-"   Several elements of this .vimrc come from Pierre Bourdon's config
+"   Most elements of this .vimrc come from Kévin Sztern's config
+"   You can find it here : https://github.com/Chewie/configs
+"   Several elements come from Pierre Bourdon's config
 "   You can find it here: https://bitbucket.org/delroth/configs/
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -53,12 +50,14 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tristen/vim-sparkup'
 Bundle 'majutsushi/tagbar'
 Bundle 'SirVer/ultisnips'
 Bundle 'Chewie/EPITA-snippets'
+Bundle 'vim-scripts/DoxygenToolkit.vim'
+Bundle 'Rip-Rip/clang_complete'
 
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
@@ -122,11 +121,6 @@ set wildmode=list:longest:full
 " Disable bell completely
 set visualbell
 set t_vb=
-
-" Color the column after textwidth, usually the 80th
-if version >= 703
-  set colorcolumn=+1
-endif
 
 " Display whitespace characters
 set list
@@ -203,7 +197,10 @@ set smarttab
 set autoindent
 
 " This one is complicated. See :help cinoptions-values for details
-set cinoptions=(0,u0,U0,t0,g0,N-s
+set cinoptions=(0,u0,U0,t0,g0
+
+" Set python tab to 2
+"autocmd Filetype python setlocal expandtab shiftwidth=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -302,7 +299,7 @@ noremap <leader>ta :Tab / [^ ]*;<cr>
 noremap <leader>gs :Gstatus<cr>
 
 " Use the patched font for the fancy status line
-let g:Powerline_symbols='fancy'
+" let g:Powerline_symbols='fancy'
 
 " Syntastic mappings and options
 " -------------------------------
@@ -310,21 +307,22 @@ let g:Powerline_symbols='fancy'
 noremap <leader>se :Errors<cr>
 
 " Set the C and C++ compilers used for syntax checking with syntastic
-let g:syntastic_cpp_compiler='clang++'
+let g:syntastic_cpp_compiler='g++'
 let g:syntastic_c_compiler='clang'
 
 " Check headers too, because why wouldn't we?
 let g:syntastic_c_check_header=1
 let g:syntastic_cpp_check_header=1
 
-" Default to C++11
-let g:syntastic_cpp_compiler_options = "-std=c++11"
+" Default to EPITA flags
+let g:syntastic_cpp_compiler_options = ' -Wall -Wextra -Werror -std=c++11 -pedantic '
+let g:include_path = ' -I src/includes/ '
 
 " Clang_complete options
 " ----------------------
 
 " Don't complete unless asked to
-let g:clang_complete_auto=0
+let g:clang_complete_auto=1
 
 " Use libclang.so instead of the clang executable for clang_complete
 let g:clang_use_library=1
@@ -332,3 +330,27 @@ let g:clang_use_library=1
 " Use snippets to complete
 let g:clang_snippets=1
 let g:clang_snippets_engine="ultisnips"
+
+"""""""""""""""""""""""""""""""""
+" Fumbo's adds
+""""""""""""""""""""""""""""""""""
+"Change color to fit well with ubunto terminal and epita racks
+set t_Co=256
+
+
+" Options for syntastic Syntastic
+"let g:enable_warning = 1
+"let g:compile_flag = ' -Wall -Wextra -Werror -std=c++11 -pedantic '
+"let g:c_compiler = 'gcc'
+"let g:cpp_compiler = 'g++'
+"map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" Adding column at 80 characters and changing it collors
+set cc=80
+hi ColorColumn ctermbg=lightblue
+
+" Doxygen modified by Durieux Edouard
+let g:DoxygenToolkit_authorName="Cadet Louis"
+let g:DoxygenToolkit_blockTag="@fn"
+let g:DoxygenToolkit_interCommentBlock ="**"
+let g:DoxygenToolkit_interCommentTag ="** "
