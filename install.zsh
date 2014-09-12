@@ -1,4 +1,4 @@
-#! /usr/local/bin/zsh
+#! /usr/bin/zsh
 
 ## Warning: this script assumes that you are using zsh and running it from
 ## its directory (ie : ./install.zsh)
@@ -15,4 +15,4 @@ git submodule update
 
 # Create symlinks
 cd $HOME
-ln -s $OLDPWD/*~*.git~*.gitmodules~*install.zsh~*README.markdown .
+ln -s $OLDPWD/*~*.git~*.gitmodules~*.gitignore~*install.zsh~*README.markdown~*add_files.sh~*nuke .

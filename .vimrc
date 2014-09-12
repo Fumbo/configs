@@ -50,7 +50,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-" Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tristen/vim-sparkup'
 Bundle 'majutsushi/tagbar'
@@ -58,6 +58,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'Chewie/EPITA-snippets'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'klen/python-mode'
 
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
@@ -73,7 +74,7 @@ set nobackup
 
 " Force encoding to utf-8, for systems where this is not the default (windows
 " comes to mind)
-set encoding=utf-8
+" set encoding=utf-8
 
 " Disable swapfiles too
 set noswapfile

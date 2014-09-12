@@ -33,28 +33,29 @@ precmd ()
 }
 
 
-# Aliases
+## Aliases
 alias emacs='emacs -nw'
+# Open multiple files in differents tab
+alias vim='vim -p'
 alias valgrindfull='valgrind --leak-check=full --track-origins=yes'
-alias nuke='~/configs/nuke/nuke.sh'
+alias nuke='sudo ~/configs/nuke/nuke.sh'
 alias rat='tmux attach-session'
 alias se='sudoedit'
-alias ls='ls -GI'
+alias ls='ls --color=auto -G'
 alias l='ls -l'
 alias la='ls -la'
 alias idea='/home/cadet_l/local/idea/bin/idea.sh'
 alias reload='source ~/.zshrc'
-alias mygcc='gcc -Wall -Wextra -Werror -std=c99 -pedantic'
-alias myg++='g++ -Wall -Wextra -Werror -pedantic -std=c++11'
-alias lock='metalock'
+alias Gcc='gcc -Wall -Wextra -Werror -std=c99 -pedantic'
+alias G++='g++ -Wall -Wextra -Werror -pedantic -std=c++11'
 
 # Exports
 export PROMPT='%F{33}%n% %F{75}@%F{33}%m% %F{75}[%F{222}%~% %F{75}]%F{75}$%f '
 export RPROMPT='${vcs_info_msg_0_}'
 export PAGER='most'
-export NNTPSERVER='news.epita.fr' && export NNTPSERVER
-export PATH="/home/cadet_l/local/idea/bin:/home/cadet_l/local/bison/bin:/sbin:$PATH"
+export PATH="$PATH"
 export EDITOR='vim'
+export TERM='xterm-256color'
 
 function spectrum_ls() {
 for code in {000..255}; do

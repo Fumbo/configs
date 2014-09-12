@@ -3,5 +3,3 @@
 *.so
 *.gch
 *.pyc
-.ssh/*
-.vim/.netrwhist

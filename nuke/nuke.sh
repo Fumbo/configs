@@ -1,4 +1,4 @@
-#! /usr/local/bin/bash
+#! /bin/bash
 
 for i in {1..6}; do
     sleep 0.5;
@@ -6,4 +6,4 @@ for i in {1..6}; do
     cat ~/configs/nuke/nuke$i;
 done
 
-/sbin/shutdown -p now
+/sbin/shutdown -P now
