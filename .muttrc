@@ -81,3 +81,7 @@ set pager_stop
 
 # Mutt should automatically view the text/html parts of message
 auto_view text/html
+
+## Bindings
+# Refresh inbox mails
+bind index "G" imap-fetch-mail

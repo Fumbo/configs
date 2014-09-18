@@ -7,7 +7,7 @@ zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename '/home/cadet_l/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -48,8 +48,9 @@ alias idea='/home/cadet_l/local/idea/bin/idea.sh'
 alias reload='source ~/.zshrc'
 alias Gcc='gcc -Wall -Wextra -Werror -std=c99 -pedantic'
 alias G++='g++ -Wall -Wextra -Werror -pedantic -std=c++11'
+alias lock='i3lock -c 000000'
 
-# Exports
+## Exports
 export PROMPT='%F{33}%n% %F{75}@%F{33}%m% %F{75}[%F{222}%~% %F{75}]%F{75}$%f '
 export RPROMPT='${vcs_info_msg_0_}'
 export PAGER='most'
@@ -57,6 +58,7 @@ export PATH="$PATH"
 export EDITOR='vim'
 export TERM='xterm-256color'
 
+# Function to use for easy color choising
 function spectrum_ls() {
 for code in {000..255}; do
     print -P -- "$code: %F{$code}Test%f";

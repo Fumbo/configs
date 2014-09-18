@@ -355,3 +355,6 @@ let g:DoxygenToolkit_authorName="Cadet Louis"
 let g:DoxygenToolkit_blockTag="@fn"
 let g:DoxygenToolkit_interCommentBlock ="**"
 let g:DoxygenToolkit_interCommentTag ="** "
+
+" Python Mode
+" let g:pymode_python='python3'
