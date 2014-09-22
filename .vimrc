@@ -59,6 +59,7 @@ Bundle 'Chewie/EPITA-snippets'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'klen/python-mode'
+Bundle "honza/vim-snippets"
 
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
@@ -357,4 +358,6 @@ let g:DoxygenToolkit_interCommentBlock ="**"
 let g:DoxygenToolkit_interCommentTag ="** "
 
 " Python Mode
-" let g:pymode_python='python3'
+let g:pymode_rope_completion = 1
+let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_completion_bind = '<C-N>'
