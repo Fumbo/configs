@@ -40,4 +40,4 @@
 [pager]
     status = false
 [push]
-	default = simple
+    default = simple

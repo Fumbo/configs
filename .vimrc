@@ -349,7 +349,7 @@ set t_Co=256
 
 " Adding column at 80 characters and changing it collors
 set cc=80
-hi ColorColumn ctermbg=lightblue
+" hi ColorColumn ctermbg=lightblue
 
 " Doxygen modified by Durieux Edouard
 let g:DoxygenToolkit_authorName="Cadet Louis"
@@ -358,6 +358,8 @@ let g:DoxygenToolkit_interCommentBlock ="**"
 let g:DoxygenToolkit_interCommentTag ="** "
 
 " Python Mode
-let g:pymode_rope_completion = 1
-let g:pymode_rope_complete_on_dot = 1
-let g:pymode_rope_completion_bind = '<C-N>'
+let g:pymode_rope_completion=1
+let g:pymode_rope_complete_on_dot=1
+let g:pymode_rope_completion_bind='<C-N>'
+"Remove auto trim trailing whitespace
+let g:pymode_trim_whitespaces=0
